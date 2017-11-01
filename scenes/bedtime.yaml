@@ -1,0 +1,95 @@
+  - name: Bedtime
+    entities:
+        media_player.sony_bravia_tv:
+            state: off
+        light.living_room__buffet_lamp:
+            state: on
+            transition: 10
+            brightness: 64
+        light.living_room__sofa_table_lamp:
+            state: off
+            transition: 10
+            brightness: 64
+        light.living_room__side_table_lamp:
+            state: off
+            transition: 10
+            brightness: 64
+        light.red_lamppost_level_3_0:
+            state: off
+            brightness: 64
+        light.hallway:
+            state: on
+            transition: 10
+            brightness: 64
+        light.upstairs_hallway:
+            state: on
+            transition: 10
+            brightness: 64
+        light.lounge__corner_lamp:
+            state: on
+            transition: 10
+            brightness: 64
+        light.lounge_bloom:
+            state: on
+            transition: 10
+            brightness: 64
+            effect: random
+        light.master_bedroom__bob_nightstand:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
+        light.master_bedroom__ivan_nightstand:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
+        light.master_bedroom__decorator_lamp:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
+        light.dining_room__chandelier_1:
+            state: off
+            transition: 10
+        light.dining_room__chandelier_2:
+            state: off
+            transition: 10
+        light.living_room__oil_burner_level_5_0:
+            state: off
+        switch.volcano_switch:
+            state: off
+        group.kitchen:
+            state: off
+        group.pantry:
+            state: off
+        light.gameroom_1:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
+        light.gameroom_2:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
+        light.gameroom_3:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
+        light.gameroom_4:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
+        light.gameroom_5:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
+        light.gameroom_6:
+            state: on
+            transition: 10
+            brightness: 90
+            effect: random
