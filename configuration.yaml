@@ -48,7 +48,7 @@ logger:
 
 http:
   server_port: !secret http_server_port
-  http_api_password: !secret http_api_password
+  api_password: !secret http_api_password
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   
