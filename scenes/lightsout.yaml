@@ -1,0 +1,38 @@
+  - name: LightsOut
+    entities:
+        light.living_room__buffet_lamp:
+          state: off
+          transition: 2
+        light.living_room__sofa_table_lamp:
+          state: off
+          transition: 2
+        light.living_room__side_table_lamp:
+          state: off
+          transition: 2  
+        light.red_lamppost_level_3_0:
+          state: off
+          transition: 2  
+        light.dining_room__chandelier_1:
+          state: off
+          transition: 2
+        light.dining_room__chandelier_2:
+          state: off
+          transition: 2
+        light.lounge__corner_lamp:
+          state: off
+          transition: 2
+        light.master_bedroom__bob_nightstand:
+          state: off
+          transition: 30
+        light.master_bedroom__ivan_nightstand:
+          state: off
+          transition: 30
+        light.master_bedroom__decorator_lamp:
+          state: off
+          transition: 30
+        switch.volcano_switch:
+          state: off
+        group.salon:
+          state: off
+        group.gameroom:
+          state: off

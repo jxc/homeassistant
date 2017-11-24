@@ -1,0 +1,59 @@
+###
+### Sensors!
+###
+
+#  Test our speed every 15 minutes
+- platform: speedtest
+  minute:
+    - 0
+    - 15
+    - 30
+    - 45
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+- platform: fastdotcom
+  minute:
+    - 0
+    - 15
+    - 30
+    - 45
+#  Get our weather from DarkSky
+- platform: darksky
+  api_key: !secret darksky_api_key
+  monitored_conditions:
+    - summary
+    - icon
+    - precip_probability
+    - temperature
+    - apparent_temperature
+    - wind_speed
+    - wind_bearing
+    - cloud_cover
+    - humidity
+    - pressure
+    - visibility
+    # - nearest_storm_distance
+    # - nearest_storm_bearing
+    # - precip_type
+    # - precip_intensity
+    # - dew_point
+    # - ozone      
+
+# Provides Date and Time
+- platform: time_date
+  display_options:
+    - 'time'
+    - 'date'
+    - 'time_utc'
+
+# Moon tracking
+- platform: moon
+
+- platform: google_wifi
+  
+# Are we getting mail today?
+#- platform: usps
+
+
