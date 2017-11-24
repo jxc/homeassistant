@@ -42,8 +42,8 @@ logger:
 
 http:
   # Uncomment this to add a password (recommended!)
-  server_port: 8123
-  api_password: !secret api_password
+  server_port: !secret http_server_port
+  api_password: !secret http_api_password
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
   
