@@ -218,7 +218,7 @@ group:
     view: yes
     name: Gameroom
     entities:
-      - camera.gameroom_camera
+      - camera.gameroom
       - group.gameroom
       - light.gameroom_1
       - light.gameroom_2
