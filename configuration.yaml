@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Das Manorhaus
   # Location required to calculate the time the sun rises and sets
-  latitude: !secret latitude
-  longitude: !secret longitude
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: !secret elevation
   # metric for Metric, imperial for Imperial
@@ -151,10 +151,10 @@ notify:
     default_channel: !secret slack_default_channel
   - name: twitter_manorhaus
     platform: twitter
-    consumer_key: oCeLkquyFpDb5r5qHIcrItUIL
-    consumer_secret: E9oTXmqbdX93ldeZ4WTg3fTdcwK8mdcqWIFnnt2WlVpeATE3Z7
-    access_token: 913598966520041472-GnbDBdPDAIfvtGkUMaMkHv2UUaKzJs9
-    access_token_secret: POxgSABQo1vKOnTWLzJmr1Qgr3DOvJUsLpCdwcasfn45m
+    consumer_key: !secret twitter_consumer_key
+    consumer_secret: !secret twitter_consumer_secret
+    access_token: !secret twitter_access_token
+    access_token_secret: !secret twitter_access_token_secret
     username: dasManorHaus
   - name: ecobee.manorhaus
     platform: ecobee
