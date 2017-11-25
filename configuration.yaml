@@ -116,12 +116,12 @@ camera:
   - platform: foscam
     ip: gameroom-camera
     name: gameroom
-    friendly_name: Gameroom Camera 
+    friendly_name: Gameroom Camera
     port: 88
     username: !secret gameroom_camera_username
-    password: !secret gameroom_camera_username
+    password: !secret gameroom_camera_password
   - platform: foscam
-    ip: 192.168.86.141
+    ip: livingroom-camera
     name: livingroom
     friendly_name: Living Room Camera
     port: 88
