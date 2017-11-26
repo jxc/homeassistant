@@ -59,8 +59,8 @@
 - platform: lyft
   client_id: Uw76b1GVXuc1
   client_secret: yRCy7OkknOtbJOLqtW849B51vWmSjfHl
-  start_latitude: !secret latitude
-  start_longitude: !secret longitude
+  start_latitude: !secret home_latitude
+  start_longitude: !secret home_longitude
   end_latitude: 40.76161
   end_longitude: 74.074985
   product_ids:
