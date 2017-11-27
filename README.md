@@ -2,7 +2,7 @@
 ## Home Automation for people with a sense of humor
 [![Build Status](https://travis-ci.org/bobeckert/homeassistant.svg?branch=master)](https://travis-ci.org/bobeckert/homeassistant)
 
-### Components Under Automation
+### Components Involved
 
 * (1) Philips Hue Bridge
 * (XX) Philips Hue White bulbs
@@ -24,3 +24,9 @@
 * (1) Google Chromecast Ultra 4K
 * (1) Sony Bravia TV
 * (3) Foscam F19821P V2 Cameras
+* (3) Amazon Echo (1st generation)
+* (1) Ecobee 4 Thermostat
+* (1) Amazon Echo Dot (1st generation)
+* (2) Amazon Echo Dot (2nd generation)
+* (1) AppleTV (3rd Generation)
+
