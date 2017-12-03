@@ -1,354 +1,72 @@
 homeassistant:
-  name: Das Manorhaus
+  name: Home
   latitude: !secret home_latitude
   longitude: !secret home_longitude
-  elevation: !secret elevation
+  elevation: !secret home_elevation
   # unit_system: imperial
   unit_system: metric
-
-  time_zone: EST5EDT
-  customize:
-    switch.volcano_switch:
-      friendly_name: Volcano
-      icon: mdi:cloud-upload
-      emulated_hue: true
-      emulated_hue_name: "Volcano"
-    light.living_room__oil_burner_level:
-      emulated_hue: true
-      emulated_hue_name: "Oil burner"
-      friendly_name: Living Room Aromatherapy
-    light.red_lamppost_level:
-      friendly_name: Living Room - Red Lamppost
-      emulated_hue: true
-      emulated_hue_name: "Living Room - Red Lamppost"
-    sensor.google_wifi_new_version:
-      friendly_name: "NetworkOS Version"
-    sensor.google_wifi_status:
-      friendly_name: "Network Status"
-    sensor.google_wifi_uptime:
-      friendly_name: "Network Uptime"
+  time_zone: !secret home_time_zone
 
 # Show links to resources in log and frontend
-#introduction:
+introduction:
 
 # Enables the frontend
 frontend:
   javascript_version: latest
 
-#Info is default log level, but WAY to fuckin chatty.
+# Enables configuration UI
+config:
+
+  #Info is default log level, but WAY to fuckin chatty.
 logger:
 #  default: info
   default: warn
 
+# Enables configuration UI
+config:
+
 http:
   server_port: !secret http_server_port
   api_password: !secret http_api_password
-  ssl_certificate: !secret ssl_certificate
-  ssl_key: !secret ssl_key
-  
+
 # Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
 updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  include_used_components: true
 
 # Discover some devices automatically
-#discovery:
+discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
 
-# Enables support for tracking state changes over time.
+# Enables support for tracking state changes over time
 history:
 
 # View all events in a logbook
 logbook:
 
+# Enables a map showing the location of tracked devices
+map:
+
 # Track the sun
 sun:
 
-# Weather Prediction
+# Text to speech
+tts:
+  - platform: google
+
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include_dir_list scenes
 sensor: !include sensors.yaml
 
-media_player:
-  - platform: cast
-  - platform: braviatv
-    host: 192.168.86.122
-    friendly_name: Big TV
-    emulated_hue: true
-    emulated_hue_name: "big tv"
 
-
-#  - platform: sonos
-
-# - platform ecobee
+- platform ecobee
 ecobee:
   api_key: !secret ecobee_api_key
-
-config:
-
-zwave:
-  usb_path: /dev/ttyACM0
-  config_path: /srv/homeassistant/src/python-openzwave/openzwave/config
-#  config_path: /srv/homeassistant/lib/python3.4/site-packages/python_openzwave/ozw_config
-#  config_path: /home/homeassistant/.homeassistant/
-  polling_interval: 60000
-
-# device_tracker
-device_tracker:
-  - platform: nmap_tracker
-    consider_home: 180
-    track_new_devices: true
-    interval_seconds: 60
-    hosts:
-      - 192.168.86.0/24
-
-light:
-  platform: hue
-  host: 192.168.86.117
-  allow_unreachable: true
-  filename: phue.conf
-
-camera:
-  - platform: foscam
-    ip: gameroom-camera
-    name: gameroom
-    friendly_name: Gameroom Camera
-    port: 88
-    username: !secret gameroom_camera_username
-    password: !secret gameroom_camera_password
-  - platform: foscam
-    ip: livingroom-camera
-    name: livingroom
-    friendly_name: Living Room Camera
-    port: 88
-    username: !secret livingroom_camera_username
-    password: !secret livingroom_camera_password
-  - platform: generic
-    still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=DIX&brand=wui&num=8&delay=30&type=N0R&frame=0&scale=1.000&noclutter=0&showstorms=1&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=0&lightning=1&smooth=0&rand=24330421&lat=0&lon=0&label=you  
-    name: LocalWeatherRadar 
-  - platform: generic
-    still_image_url: https://icons.wxug.com/data/weather-maps/radar/united-states/binghamton-new-york-region-current-radar-animation.gif
-    name: RegionalWeatherRadar
-
-emulated_hue:
-    expose_by_default: false
-    host_ip: 192.168.86.20
-    listen_port: 8300
-
-
-notify:
-  - name: slack_manorhaus
-    platform: slack
-    api_key: !secret slack_api_key
-    default_channel: !secret slack_default_channel
-  - name: twitter_manorhaus
-    platform: twitter
-    consumer_key: !secret twitter_consumer_key
-    consumer_secret: !secret twitter_consumer_secret
-    access_token: !secret twitter_access_token
-    access_token_secret: !secret twitter_access_token_secret
-    username: dasManorHaus
-  - name: ecobee.manorhaus
-    platform: ecobee
-
-
-scene: !include_dir_list scenes
-
-group:
-#   default_view:
-#     view: yes
-#     entities:
-#       - sensor.kids_room_temperature
-#       - sensor.downstairs_temperature
-#       - sensor.home_humidity
-#       - sensor.home_temperature
-#       - sensor.fastdotcom_download
-#       - sensor.moon
-#       - sensor.time
-#       - sensor.time_utc
-#       - sensor.dark_sky_summary
-#       - sensor.dark_sky_temperature
-#       - sensor.dark_sky_apparent_temperature
-# #      - sensor.njtransitcliftonhob
-# #      - sensor.USPS
-#       - camera.LocalWeatherRadar
-#       - camera.RegionalWeatherRadar
-#       - device_tracker.5c70a31f05d3
-#       - device_tracker.android14bb7e5acc015b9alan
-#       - scene.morning_routine
-#       - scene.bedtime
-#       - scene.lightsout
-#       - sensor.google_wifi_status
-#       - sensor.google_wifi_uptime
-#       - sensor.google_wifi_new_version
-  master_bedroom:
-    name: Master Bedroom
-    entities:
-     - light.master_bedroom__bob_nightstand
-     - light.master_bedroom__ivan_nightstand
-     - light.master_bedroom__decorator_lamp
-  master_bedroom_menu:
-    name: Master Bedroom
-    view: yes
-    entities:
-     - group.master_bedroom
-     - light.master_bedroom__bob_nightstand
-     - light.master_bedroom__ivan_nightstand
-     - light.master_bedroom__decorator_lamp
-     - scene.bedtime
-     - scene.lightsout
-  gameroom:
-    name: Gameroom Lights
-    entities:
-      - light.gameroom_1
-      - light.gameroom_2
-      - light.gameroom_3
-      - light.gameroom_4
-      - light.gameroom_5
-      - light.gameroom_6
-  gameroom_menu:
-    view: yes
-    name: Gameroom
-    entities:
-      - camera.gameroom
-      - group.gameroom
-      - light.gameroom_1
-      - light.gameroom_2
-      - light.gameroom_3
-      - light.gameroom_4
-      - light.gameroom_5
-      - light.gameroom_6
-      - media_player.gameroom
-      - scene.gameroom__red_alert
-      - scene.gameroom__normal_mode
-      - input_boolean.gameroom_party_mode
-      - automation.turn_on_gameroom_party_mode
-  office:
-    name: Bobby's Office
-    entities:
-      - light.office__desk_lamp
-      - light.office__floor_lamp
-      - light.hue_lightstrip_1
-  office_menu:
-    view: yes
-    name: Bobby's Office
-    entities:
-      - sensor.fastdotcom_download
-      - sensor.time_date
-      - group.office
-      - light.office__desk_lamp
-      - light.office__floor_lamp
-      - light.hue_lightstrip_1
-      - device_tracker.office_appletv
-  jonathans_bedroom:
-    name: Johnny's Bedroom
-    entities:
-      - light.johnathans_bedroom__nightstand
-  living_room:
-    name: Living Room
-    entities:
-      - light.living_room__buffet_lamp
-      - light.living_room__sofa_table_lamp
-      - light.living_room__side_table_lamp
-      - light.red_lamppost_level
-  living_area_menu:
-    name: Living Area
-    view: yes
-    entities:
-      - group.living_room
-      - media_player.living_room
-      - light.living_room__buffet_lamp
-      - light.living_room__sofa_table_lamp
-      - light.living_room__side_table_lamp
-      - light.red_lamppost_level
-      - light.hallway
-      - light.living_room__oil_burner_level
-      - camera.livingroom
-      - group.dining_room_chandelier
-      - light.entranceway
-      - group.salon
-  salon:
-    name: Salon Overhead
-    entities:
-      - light.salon_overhead_1
-      - light.salon_overhead_2
-  dining_room_chandelier:
-    name: Dining Room Chandelier
-    entities:
-      - light.dining_room__chandelier_1
-      - light.dining_room__chandelier_2
-  kitchen_overhead:
-    name: Kitchen Overhead
-    entities:
-      - light.kitchen_overhead_1
-      - light.kitchen_overhead_2
-  kitchen:
-    name: Kitchen
-    entities:
-      - light.kitchen_overhead_1
-      - light.kitchen_overhead_2
-      - light.kitchen_sink
-      - light.pantry_1
-      - light.pantry_2
-  pantry:
-    name: Pantry
-    entities: 
-      - light.pantry_1
-      - light.pantry_2
-  kitchen-lounge_menu:
-    name: Kitchen / Lounge
-    view: yes
-    entities:
-      - group.kitchen_overhead
-      - light.kitchen_sink
-      - group.pantry
-      - media_player.sony_bravia_tv
-      - light.lounge__corner_lamp
-      - light.lounge_bloom
-      - media_player.lounge
-      - media_player.bowser
-      - media_player.princesspeach
-      - media_player.wario
-      - media_player.toadstool
-      - scene.bedtime
-      - switch.volcano_switch
-  lounge:
-    name: Lounge
-    entities:
-      - media_player.sony_bravia_tv
-      - light.lounge__corner_lamp
-      - light.lounge_bloom
-      - media_player.lounge
-      - media_player.bowser
-      - media_player.princesspeach
-      - media_player.wario
-      - media_player.toadstool
-      - switch.volcano_switch
-input_boolean:
-  gameroom_party_mode:
-    name: Gameroom Party Mode
-    initial: off
-    icon: mdi:spotlight
-
-#recorder:
-#  purge_days: 5
-#  db_url: !secret db_url
-  
-automation: !include automations.yaml
-
-zone:
-  name: Work
-  latitude: 40.739398
-  longitude: -73.989285
-  elevation: 12 
-  radius: 175
-  icon: mdi:domain
-
-##mqtt:
-#  broker: 192.168.86.119
-#  port: 1883
-#  client_id: cheryl-homeassistant
-#  keepalive: 60
-#  username: home-assistant
-#  password: home-assistant
-#  protocol: 3.1
-  
-

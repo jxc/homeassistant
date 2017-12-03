@@ -19,27 +19,8 @@
     - 15
     - 30
     - 45
-#  Get our weather from DarkSky
-- platform: darksky
-  api_key: !secret darksky_api_key
-  monitored_conditions:
-    - summary
-    - icon
-    - precip_probability
-    - temperature
-    - apparent_temperature
-    - wind_speed
-    - wind_bearing
-    - cloud_cover
-    - humidity
-    - pressure
-    - visibility
-    # - nearest_storm_distance
-    # - nearest_storm_bearing
-    # - precip_type
-    # - precip_intensity
-    # - dew_point
-    # - ozone      
+# Weather prediction
+  - platform: yr
 
 # Provides Date and Time
 - platform: time_date
@@ -51,17 +32,8 @@
 # Moon tracking
 - platform: moon
 
-- platform: google_wifi
-  
 # Are we getting mail today?
 #- platform: usps
 
-- platform: lyft
-  client_id: Uw76b1GVXuc1
-  client_secret: yRCy7OkknOtbJOLqtW849B51vWmSjfHl
-  start_latitude: !secret home_latitude
-  start_longitude: !secret home_longitude
-  end_latitude: 40.76161
-  end_longitude: 74.074985
-  product_ids:
-    - 'lyft'
+# - platform: lyft
+  
