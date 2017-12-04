@@ -3,8 +3,7 @@ homeassistant:
   latitude: !secret home_latitude
   longitude: !secret home_longitude
   elevation: !secret home_elevation
-  # unit_system: imperial
-  unit_system: metric
+  unit_system: imperial
   time_zone: !secret home_time_zone
 
 # Show links to resources in log and frontend
@@ -17,13 +16,10 @@ frontend:
 # Enables configuration UI
 config:
 
-  #Info is default log level, but WAY to fuckin chatty.
+#Info is default log level, but WAY to fuckin chatty.
 logger:
 #  default: info
   default: warn
-
-# Enables configuration UI
-config:
 
 http:
   server_port: !secret http_server_port
@@ -67,6 +63,6 @@ scene: !include_dir_list scenes
 sensor: !include sensors.yaml
 
 
-- platform ecobee
+# - platform ecobee
 ecobee:
   api_key: !secret ecobee_api_key

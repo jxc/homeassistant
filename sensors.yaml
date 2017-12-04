@@ -13,14 +13,14 @@
     - ping
     - download
     - upload
-- platform: fastdotcom
-  minute:
-    - 0
-    - 15
-    - 30
-    - 45
+# - platform: fastdotcom
+#   minute:
+#     - 0
+#     - 15
+#     - 30
+#     - 45
 # Weather prediction
-  - platform: yr
+- platform: yr
 
 # Provides Date and Time
 - platform: time_date
