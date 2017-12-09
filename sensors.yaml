@@ -13,12 +13,12 @@
     - ping
     - download
     - upload
-# - platform: fastdotcom
-#   minute:
-#     - 0
-#     - 15
-#     - 30
-#     - 45
+- platform: fastdotcom
+  minute:
+    - 0
+    - 15
+    - 30
+    - 45
 # Weather prediction
 - platform: yr
 
