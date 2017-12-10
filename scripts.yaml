@@ -1,4 +1,7 @@
-front_lights_bright:
+##########
+# Lights #
+##########
+front_lights_full:
   sequence:
     - service: light.hue_activate_scene
       data:
@@ -8,7 +11,27 @@ front_lights_bright:
       data:
         group_name: "Garage"
         scene_name: "Bright"
-front_lights_night_light:
+front_lights_half:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Front door"
+        scene_name: "Half On"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Half On"
+front_lights_dimmed:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Front door"
+        scene_name: "Dimmed"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Dimmed"
+front_lights_nightlight:
   sequence:
     - service: light.hue_activate_scene
       data:
