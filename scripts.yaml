@@ -1,0 +1,28 @@
+front_lights_bright:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Front Door"
+        scene_name: "Bright"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Bright"
+front_lights_night_light:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Front Door"
+        scene_name: "Nightlight"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Nightlight"
+front_lights_off:
+  sequence:
+    - service: homeassistant.turn_off
+      data:
+        entity_id:
+         - light.front_door
+         - light.garage_left
+         - light.garage_right
