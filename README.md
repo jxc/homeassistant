@@ -4,4 +4,6 @@
 
 ### Components Involved
 
-n/a
+- (1) Ecobee 3
+- (1) Philips Hue Hub
+- (4) Philips A19 Bulbs
