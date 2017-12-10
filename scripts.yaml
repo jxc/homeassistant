@@ -1,7 +1,6 @@
-script:
-  garage_bright:
-    sequence:
-      - service: light.hue_activate_scene
-        data:
-          group_name: "Garage"
-          scene_name: "Bright"
+garage_bright:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Bright"
