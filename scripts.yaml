@@ -2,7 +2,7 @@ front_lights_bright:
   sequence:
     - service: light.hue_activate_scene
       data:
-        group_name: "Front Door"
+        group_name: "Front door"
         scene_name: "Bright"
     - service: light.hue_activate_scene
       data:
@@ -12,7 +12,7 @@ front_lights_night_light:
   sequence:
     - service: light.hue_activate_scene
       data:
-        group_name: "Front Door"
+        group_name: "Front door"
         scene_name: "Nightlight"
     - service: light.hue_activate_scene
       data:
