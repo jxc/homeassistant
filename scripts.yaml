@@ -1,36 +1,11 @@
-##########
-# Lights #
-##########
-front_lights_full:
+front_lights_off:
   sequence:
-    - service: light.hue_activate_scene
+    - service: homeassistant.turn_off
       data:
-        group_name: "Front door"
-        scene_name: "Bright"
-    - service: light.hue_activate_scene
-      data:
-        group_name: "Garage"
-        scene_name: "Bright"
-front_lights_half:
-  sequence:
-    - service: light.hue_activate_scene
-      data:
-        group_name: "Front door"
-        scene_name: "Half On"
-    - service: light.hue_activate_scene
-      data:
-        group_name: "Garage"
-        scene_name: "Half On"
-front_lights_dimmed:
-  sequence:
-    - service: light.hue_activate_scene
-      data:
-        group_name: "Front door"
-        scene_name: "Dimmed"
-    - service: light.hue_activate_scene
-      data:
-        group_name: "Garage"
-        scene_name: "Dimmed"
+        entity_id:
+         - light.front_door
+         - light.garage_left
+         - light.garage_right
 front_lights_nightlight:
   sequence:
     - service: light.hue_activate_scene
@@ -41,11 +16,33 @@ front_lights_nightlight:
       data:
         group_name: "Garage"
         scene_name: "Nightlight"
-front_lights_off:
+front_lights_dimmed:
   sequence:
-    - service: homeassistant.turn_off
+    - service: light.hue_activate_scene
       data:
-        entity_id:
-         - light.front_door
-         - light.garage_left
-         - light.garage_right
+        group_name: "Front door"
+        scene_name: "Dimmed"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Dimmed"
+front_lights_half:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Front door"
+        scene_name: "Half On"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Half On"
+front_lights_full:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Front door"
+        scene_name: "Bright"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Bright"
