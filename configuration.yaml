@@ -55,14 +55,18 @@ sun:
 # Text to speech
 tts:
   - platform: google
+  
+ecobee:
+  api_key: !secret ecobee_api_key
+
+light:
+  - platform: hue
+    allow_unreachable: true
+    allow_hue_groups: true
+    is_hue_group: true
 
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include_dir_list scenes
 sensor: !include sensors.yaml
-
-
-# - platform ecobee
-ecobee:
-  api_key: !secret ecobee_api_key
