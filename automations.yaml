@@ -1,17 +1,8 @@
-- alias: 'Sunset -1hr: Front Lights Nightlight'
+- alias: 'Sunset -15min: Front Lights Dimmed'
   trigger:
     platform: sun
     event: sunset
-    offset: '-01:00:00'
-  action:
-    - service: homeassistant.turn_on
-      entity_id: script.front_lights_nightlight
-
-- alias: 'Sunset -45min: Front Lights Dimmed'
-  trigger:
-    platform: sun
-    event: sunset
-    offset: '-00:45:00'
+    offset: '-00:15:00'
   action:
     - service: homeassistant.turn_on
       entity_id: script.front_lights_dimmed
@@ -28,7 +19,7 @@
   trigger:
     platform: sun
     event: sunset
-    offset: '-00:45:00'
+    offset: '01:00:00'
   action:
     - service: homeassistant.turn_on
       entity_id: script.front_lights_full
