@@ -6,6 +6,7 @@ front_lights_off:
          - light.front_door
          - light.garage_left
          - light.garage_right
+
 front_lights_nightlight:
   sequence:
     - service: light.hue_activate_scene
@@ -16,6 +17,7 @@ front_lights_nightlight:
       data:
         group_name: "Garage"
         scene_name: "Nightlight"
+
 front_lights_dimmed:
   sequence:
     - service: light.hue_activate_scene
@@ -26,6 +28,7 @@ front_lights_dimmed:
       data:
         group_name: "Garage"
         scene_name: "Dimmed"
+
 front_lights_half:
   sequence:
     - service: light.hue_activate_scene
@@ -36,6 +39,7 @@ front_lights_half:
       data:
         group_name: "Garage"
         scene_name: "Half On"
+
 front_lights_full:
   sequence:
     - service: light.hue_activate_scene
@@ -46,3 +50,25 @@ front_lights_full:
       data:
         group_name: "Garage"
         scene_name: "Bright"
+
+front_lights_dimmed_christmas:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Front door"
+        scene_name: "Dimmed Christmas"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Dimmed Christmas"
+
+front_lights_christmas:
+  sequence:
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Front door"
+        scene_name: "Christmas"
+    - service: light.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Christmas"
