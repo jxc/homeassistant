@@ -1,28 +1,20 @@
-- alias: 'Sunset -15min: Front Lights Dimmed'
+- alias: 'Sunset: Front Lights Dimmed Christmas'
   trigger:
     platform: sun
     event: sunset
     offset: '-00:15:00'
   action:
     - service: homeassistant.turn_on
-      entity_id: script.front_lights_dimmed
+      entity_id: script.front_lights_dimmed_christmas
 
-- alias: 'Sunset: Front Lights Half'
-  trigger:
-    platform: sun
-    event: sunset
-  action:
-    - service: homeassistant.turn_on
-      entity_id: script.front_lights_half
-
-- alias: 'Sunset +1h: Front Lights Full'
+- alias: 'Sunset +1h: Front Lights Full Christmas'
   trigger:
     platform: sun
     event: sunset
     offset: '01:00:00'
   action:
     - service: homeassistant.turn_on
-      entity_id: script.front_lights_full
+      entity_id: script.front_lights_christmas
 
 - alias: 'Midnight: Front Lights Half'
   trigger:
