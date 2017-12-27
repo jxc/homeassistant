@@ -6,9 +6,6 @@ homeassistant:
   unit_system: imperial
   time_zone: !secret home_time_zone
 
-# Show links to resources in log and frontend
-introduction:
-
 # Enables the frontend
 frontend:
   javascript_version: latest
