@@ -1,4 +1,4 @@
-- alias: 'Sunset: Front Lights Dimmed Christmas'
+- alias: '[Lights] Front Lights: Dimmed christmas at sunset'
   trigger:
     platform: sun
     event: sunset
@@ -7,7 +7,7 @@
     - service: homeassistant.turn_on
       entity_id: script.front_lights_dimmed_christmas
 
-- alias: 'Sunset +1h: Front Lights Full Christmas'
+- alias: '[Lights] Front Lights: Full christmas at sunset + 1hr'
   trigger:
     platform: sun
     event: sunset
@@ -16,7 +16,7 @@
     - service: homeassistant.turn_on
       entity_id: script.front_lights_christmas
 
-- alias: 'Midnight: Front Lights Half'
+- alias: '[Lights] Front Lights: Half white at midnight'
   trigger:
     platform: time
     at: '00:00:00'
@@ -24,7 +24,7 @@
     - service: homeassistant.turn_on
       entity_id: script.front_lights_half
 
-- alias: 'Dawn: Front Lights - Off'
+- alias: '[Lights] Front Lights: Off at dawn'
   trigger:
     platform: sun
     event: sunrise
@@ -32,7 +32,7 @@
     service: homeassistant.turn_on
     entity_id: script.front_lights_off
 
-- alias: Turn on office light when there is movement
+- alias: '[Lights] Office: On with occupancy'
   trigger:
     platform: state
     entity_id: binary_sensor.office_occupancy
@@ -41,7 +41,7 @@
     service: homeassistant.turn_on
     entity_id: light.office
 
-- alias: Turn off office light one minute after last movement
+- alias: '[Lights] Office: Off after 1min of no occupancy'
   trigger:
     platform: state
     entity_id: binary_sensor.office_occupancy
