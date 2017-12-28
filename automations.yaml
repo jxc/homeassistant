@@ -49,5 +49,5 @@
     for:
       minutes: 1
   action:
-    service: lhomeassistant.turn_off
+    service: homeassistant.turn_off
     entity_id: light.office
