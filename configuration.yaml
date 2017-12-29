@@ -62,6 +62,12 @@ light:
     allow_hue_groups: true
     is_hue_group: true
 
+notify:
+  - name: coulter_slack
+    platform: slack
+    api_key: !secret slack_api_key
+    default_channel: '#automation'
+
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
