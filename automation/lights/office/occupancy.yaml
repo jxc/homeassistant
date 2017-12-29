@@ -8,7 +8,7 @@
       entity_id: light.office
     - service: notify.coulter_slack
       data:
-        message: ":office: Occupied: light on"
+        message: "🏢 Occupied: 💡✔️"
 
 - alias: '[Lights] Office: Off when unoccupied'
   trigger:
@@ -20,4 +20,4 @@
       entity_id: light.office
     - service: notify.coulter_slack
       data:
-        message: ":office: No occupancy: light off"
+        message: "🏢 No occupancy: 💡✖️"
