@@ -4,6 +4,11 @@
 
 ### Components Involved
 
-- (1) Ecobee 3
-- (1) Philips Hue Hub
-- (4) Philips A19 Bulbs
+- Ecobee
+  - (1) Ecobee 3
+  - (3) Room sensors
+- Philips Hue
+  - Hub
+  - (4) White A19 bulbs
+  - (4) Color bulbs
+- (1) Slack
