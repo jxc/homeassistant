@@ -1,0 +1,23 @@
+- alias: '[Lights] Office: On when occupied'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.office_occupancy
+    to: 'on'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: light.office
+    - service: notify.coulter_slack
+      data:
+        message: ":office: Occupied: light on"
+
+- alias: '[Lights] Office: Off when unoccupied'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.office_occupancy
+    to: 'off'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: light.office
+    - service: notify.coulter_slack
+      data:
+        message: ":office: No occupancy: light off"
