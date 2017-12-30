@@ -1,7 +1,7 @@
 - alias: '[Switch] Guest Suite: toggle based on tempterature'
   trigger:
     platform: time
-    minutes: '/10'
+    minutes: '/20'
     seconds: 00
   action:
     - service: notify.coulter_slack
