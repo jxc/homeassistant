@@ -9,8 +9,8 @@
         message: >
           {% if states.climate.home.attributes.operation_mode != 'heat' %}
             Not set to heat, ignoring.
-          {% elif states('sensor.guest_suite_temperature')|float < states.climate.home.attributes.current_temperature %}
-            Guest suite ☃️ (suite: {{ states.sensor.guest_suite_temperature.state }} vs target: {{ states.climate.home.attributes.current_temperature }}) --> Heater on
+          {% elif states('sensor.guest_suite_temperature') < states.sensor.master_bedroom_temperature.state %}
+            Guest suite ☃️ (suite: {{ states.sensor.guest_suite_temperature.state }} vs master: {{ states.sensor.master_bedroom_temperature.state }}) --> Heater on
           {% else %}
             Guest suite good --> Heater off
           {% endif %}
