@@ -9,7 +9,6 @@
     - service: notify.coulter_slack
       data:
         message: ":office: Occupied: light on"
-        # message: ":office: Occupied ➡️ 💡 ✅"
 
 - alias: '[Lights] Office: Off when unoccupied'
   trigger:
@@ -22,4 +21,3 @@
     - service: notify.coulter_slack
       data:
         message: ":office: Unoccupied: light off"
-        # message: ":office: Unoccupied ➡️ 💡 ❌"

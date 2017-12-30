@@ -2,15 +2,13 @@
   trigger:
     platform: time
     minutes: '/10'
+    seconds: 00
   action:
     - service: notify.coulter_slack
       data:
         message: >
-          {% if states.sensor.guest_suite_temperature.state < states.climate.home.attributes.current_temperature and
-          is_state('states.climate.home.attributes.operation_mode', 'heat') %}
-            "Guest suite too cold ( {{ states.sensor.guest_suite_temperature.state }} vs {{ states.climate.home.attributes.current_temperature }} )  set heater on"
-            # "🛏️ ☃️ ( {{ states.sensor.guest_suite_temperature.state }} vs {{ states.climate.home.attributes.current_temperature }} ) ️️➡️ 🔥"
+          {% if states.sensor.guest_suite_temperature.state < states.sensor.home_temperature.state and states.climate.home.attributes.operation_mode == 'heat' %}
+            Guest suite ☃️ ( {{ states.sensor.guest_suite_temperature.state }} vs {{ states.sensor.home_temperature.state }} ) --> Heater on
           {% else %}
-            # "🛏️ 💯 ️️➡️ ✌️"
-            "Guest suite good, set heater off. Guest suite ( {{ states.sensor.guest_suite_temperature.state }} ), target ( {{ states.climate.home.attributes.current_temperature }} ), operation ( {{ states.climate.home.attributes.operation_mode }})"
+            Guest suite good --> Heater off
           {% endif %}
