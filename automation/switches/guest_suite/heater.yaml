@@ -1,0 +1,13 @@
+- alias: '[Switch] Guest Suite: toggle based on tempterature'
+  trigger:
+    platform: time
+    minutes: '/10'
+  action:
+    - service: notify.coulter_slack
+      data:
+        message: >
+          {% if states.sensor.guest_suite_temperature.state <= states.sensor.home_temperature.state %}
+            🛏️ ☃️ ( {{ states.sensor.guest_suite_temperature.state_with_unit }} vs {{ states.sensor.home_temperature.state_with_unit }} ) ️️➡️ 🔥
+          {% else %}
+            🛏️ 💯 ️️➡️ ✌️
+          {% endif %}
