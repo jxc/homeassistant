@@ -6,8 +6,11 @@
     - service: notify.coulter_slack
       data:
         message: >
-          {% if states.sensor.guest_suite_temperature.state <= states.sensor.home_temperature.state %}
-            🛏️ ☃️ ( {{ states.sensor.guest_suite_temperature.state_with_unit }} vs {{ states.sensor.home_temperature.state_with_unit }} ) ️️➡️ 🔥
+          {% if states.sensor.guest_suite_temperature.state < states.climate.home.attributes.current_temperature and
+          is_state('states.climate.home.attributes.operation_mode', 'heat') %}
+            "Guest suite too cold ( {{ states.sensor.guest_suite_temperature.state }} vs {{ states.climate.home.attributes.current_temperature }} )  set heater on"
+            # "🛏️ ☃️ ( {{ states.sensor.guest_suite_temperature.state }} vs {{ states.climate.home.attributes.current_temperature }} ) ️️➡️ 🔥"
           {% else %}
-            🛏️ 💯 ️️➡️ ✌️
+            # "🛏️ 💯 ️️➡️ ✌️"
+            "Guest suite good, set heater off. Guest suite ( {{ states.sensor.guest_suite_temperature.state }} ), target ( {{ states.climate.home.attributes.current_temperature }} ), operation ( {{ states.climate.home.attributes.operation_mode }})"
           {% endif %}
