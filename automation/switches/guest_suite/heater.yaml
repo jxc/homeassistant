@@ -7,8 +7,8 @@
     - service: notify.coulter_slack
       data:
         message: >
-          {% if states.sensor.guest_suite_temperature.state < states.sensor.home_temperature.state and states.climate.home.attributes.operation_mode == 'heat' %}
-            Guest suite ☃️ ( {{ states.sensor.guest_suite_temperature.state }} vs {{ states.sensor.home_temperature.state }} ) --> Heater on
+          {% if states.sensor.guest_suite_temperature.state < states.sensor.master_bedroom_temperature.state and states.climate.home.attributes.operation_mode == 'heat' %}
+            Guest suite ☃️ ( {{ states.sensor.guest_suite_temperature.state }} vs {{ states.sensor.master_bedroom_temperature.state }} ) --> Heater on
           {% else %}
             Guest suite good --> Heater off
           {% endif %}
