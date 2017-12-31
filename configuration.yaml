@@ -57,6 +57,7 @@ ecobee:
   api_key: !secret ecobee_api_key
 
 zwave:
+  usb_path: /dev/ttyACM1
   debug: true
 
 light:
