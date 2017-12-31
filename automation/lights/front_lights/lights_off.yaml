@@ -1,0 +1,15 @@
+- alias: '[Lights] Front Lights: Half white at midnight'
+  trigger:
+    platform: time
+    at: '00:00:00'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: script.front_lights_half
+
+- alias: '[Lights] Front Lights: Off at dawn'
+  trigger:
+    platform: sun
+    event: sunrise
+  action:
+    service: homeassistant.turn_on
+    entity_id: script.front_lights_off

@@ -1,0 +1,29 @@
+- alias: '[Lights] Front Lights: Dimmed new years at sunset'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:15:00'
+  action:
+    - service: hue.hue_activate_scene
+      data:
+        group_name: "Front door"
+        scene_name: "Dimmed New Years"
+    - service: hue.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "Dimmed New Years"
+
+- alias: '[Lights] Front Lights: Full new years at sunset + 1hr'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '01:00:00'
+  action:
+    - service: hue.hue_activate_scene
+      data:
+        group_name: "Front door"
+        scene_name: "New Years"
+    - service: hue.hue_activate_scene
+      data:
+        group_name: "Garage"
+        scene_name: "New Years"
