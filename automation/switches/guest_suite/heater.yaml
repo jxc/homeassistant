@@ -3,15 +3,27 @@
     platform: time
     minutes: '/20'
     seconds: 00
-  condition: and
-    - condition: state
-      entity_id: 'climate.home.attributes.operation_mode'
-      state: 'heat'
-    - condition: template
-      value_template: '{{ states.sensor.guest_suite_temperature.state < states.sensor.master_bedroom_temperature.state }}'
+  condition:
+    condition: template
+    value_template: '{{ states.sensor.guest_suite_temperature.state < states.sensor.master_bedroom_temperature.state }}'
   action:
     - service: notify.coulter_slack
       data:
         message: Guest suite ☃️ ({{ states.sensor.guest_suite_temperature.state }}) vs master ({{ states.sensor.master_bedroom_temperature.state }}) --> Heater on
     - service: switch.turn_on
+      entity_id: switch.guest_suite_switch
+
+- alias: '[Switch] Guest Suite Heater: Turn off if not too cold'
+  trigger:
+    platform: time
+    minutes: '/20'
+    seconds: 00
+  condition:
+    condition: template
+    value_template: '{{ states.sensor.guest_suite_temperature.state >= states.sensor.master_bedroom_temperature.state }}'
+  action:
+    - service: notify.coulter_slack
+      data:
+        message: Guest suite 💯 ({{ states.sensor.guest_suite_temperature.state }}) vs master ({{ states.sensor.master_bedroom_temperature.state }}) --> Heater off
+    - service: switch.turn_off
       entity_id: switch.guest_suite_switch
