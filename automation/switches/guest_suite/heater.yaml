@@ -24,6 +24,6 @@
   action:
     - service: notify.coulter_slack
       data:
-        message: Guest suite 💯 ({{ states.sensor.guest_suite_temperature.state }}) vs master ({{ states.sensor.master_bedroom_temperature.state }}) --> Heater off
+        message: Guest suite is good ({{ states.sensor.guest_suite_temperature.state }}) vs master ({{ states.sensor.master_bedroom_temperature.state }}) --> Heater off
     - service: switch.turn_off
       entity_id: switch.guest_suite_switch
