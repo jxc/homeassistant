@@ -4,17 +4,23 @@
       entity_id: binary_sensor.garage_door_open
       to: 'on'
       for:
-        minutes: 5
+        minutes: 30
+    condition: time
+      after: '19:00:00'
+      before: '9:00:00'
     action:
       service: notify.coulter_slack
       data:
-        message: Garage has been opened for 5min!
+        message: Garage has been opened for 30min!
 
   - alias: '[Tilt] Post to slack if garage door closes'
     trigger:
       platform: state
       entity_id: binary_sensor.garage_door_open
       to: 'off'
+    condition: time
+      after: '19:00:00'
+      before: '9:00:00'
     action:
       service: notify.coulter_slack
       data:
