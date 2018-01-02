@@ -1,4 +1,5 @@
 - alias: '[Lights] Front Lights: Dimmed christmas at sunset'
+  initial_state: false
   trigger:
     platform: sun
     event: sunset
@@ -7,6 +8,7 @@
       entity_id: script.front_lights_dimmed_christmas
 
 - alias: '[Lights] Front Lights: Full christmas at sunset + 1hr'
+  initial_state: false
   trigger:
     platform: sun
     event: sunset
