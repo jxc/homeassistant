@@ -2,13 +2,21 @@
 ## Home Automation for people with a sense of humor
 [![Build Status](https://travis-ci.org/jxc/homeassistant.svg?branch=master)](https://travis-ci.org/jxc/homeassistant)
 
-### Components Involved
+### Active Components
 
 - Ecobee
   - (1) Ecobee 3
   - (3) Room sensors
 - Philips Hue
   - Hub
-  - (4) White A19 bulbs
-  - (4) Color bulbs
+  - (2) White A19 bulbs
+  - (3) Color bulbs
 - (1) Slack
+- (1) UPS Tracking
+- Zwave
+  - (1) Controller
+  - (1) Garage sensor
+  - (2) Switches
+- Speedtests
+  - Fast.com
+  - Speedtest.net
