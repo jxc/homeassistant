@@ -60,6 +60,16 @@ zwave:
   usb_path: /dev/ttyACM1
   debug: true
 
+ring:
+  username: !secret ring_username
+  password: !secret ring_password
+
+binary_sensor:
+  - platform: ring
+
+sensor:
+  - platform: ring
+
 light:
   - platform: hue
     allow_unreachable: true
