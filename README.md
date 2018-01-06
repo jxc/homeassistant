@@ -11,6 +11,7 @@
   - Hub
   - (3) Color bulbs
 - (1) Slack
+- (1) Ring doorbell
 - Zwave
   - (1) Controller
   - (1) Garage sensor
