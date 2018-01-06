@@ -19,6 +19,17 @@
     - 15
     - 30
     - 45
+
+ - platform: template
+    sensors:
+      internet_state:
+        value_template: >-
+          {% if states.sensor.fastcom_download.state > 0 %}
+            online
+          {% else %}
+            offline
+          {% endif %}
+
 # Weather prediction
 - platform: yr
 
