@@ -5,9 +5,12 @@
       to: 'on'
       for:
         minutes: 30
-    condition: time
-      after: '19:00:00'
-      before: '9:00:00'
+    condition:
+      condition: and
+      conditions:
+        - condition: sun
+          after: sunset
+          before: sunrise
     action:
       service: notify.coulter_slack
       data:
@@ -18,9 +21,12 @@
       platform: state
       entity_id: binary_sensor.garage_door_open
       to: 'off'
-    condition: time
-      after: '19:00:00'
-      before: '9:00:00'
+    condition:
+      condition: and
+      conditions:
+        - condition: sun
+          after: sunset
+          before: sunrise
     action:
       service: notify.coulter_slack
       data:
