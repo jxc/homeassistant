@@ -25,7 +25,7 @@
   sensors:
     internet_state:
       value_template: >-
-        {% if states.sensor.fastcom_download.state > 0 %}
+        {% if states.sensor.fastcom_download.state|float > 0 %}
           online
         {% else %}
           offline
