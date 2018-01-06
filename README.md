@@ -9,10 +9,8 @@
   - (3) Room sensors
 - Philips Hue
   - Hub
-  - (2) White A19 bulbs
   - (3) Color bulbs
 - (1) Slack
-- (1) UPS Tracking
 - Zwave
   - (1) Controller
   - (1) Garage sensor
@@ -20,3 +18,6 @@
 - Speedtests
   - Fast.com
   - Speedtest.net
+- Mail / Packages
+  - UPS tracking
+  - Fedex tracking
