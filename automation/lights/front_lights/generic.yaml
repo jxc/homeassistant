@@ -14,7 +14,7 @@
         group_name: "Garage"
         scene_name: "Dimmed"
 
-- alias: '[Lights] Front Lights: Full new years at sunset + 1hr'
+- alias: '[Lights] Front Lights: Full white at sunset + 1hr'
   initial_state: false
   trigger:
     platform: sun
