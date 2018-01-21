@@ -67,9 +67,6 @@ ring:
 binary_sensor:
   - platform: ring
 
-sensor:
-  - platform: ring
-
 light:
   - platform: hue
     allow_unreachable: true

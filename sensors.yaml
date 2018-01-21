@@ -54,6 +54,7 @@
   username: !secret fedex_username
   password: !secret fedex_password
 
+- platform: ring
 #- platform: usps
 
 # - platform: lyft
