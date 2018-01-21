@@ -1,5 +1,4 @@
 - alias: '[Lights] Front Lights: Dimmed white at sunset'
-  initial_state: false
   trigger:
     platform: sun
     event: sunset
@@ -15,7 +14,6 @@
         scene_name: "Dimmed"
 
 - alias: '[Lights] Front Lights: Full white at sunset + 1hr'
-  initial_state: false
   trigger:
     platform: sun
     event: sunset
