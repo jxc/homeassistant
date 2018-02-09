@@ -1,0 +1,17 @@
+- platform: template
+  sensors:
+    simple_date_day:
+      entity_id: sensor.date
+      value_template: "{{ strptime(states('sensor.date'), '%Y-%m-%d').day }}"
+
+- platform: template
+  sensors:
+    simple_date_month:
+      entity_id: sensor.date
+      value_template: "{{ strptime(states('sensor.date'), '%Y-%m-%d').month }}"
+
+- platform: template
+  sensors:
+    simple_date_year:
+      entity_id: sensor.date
+      value_template: "{{ strptime(states('sensor.date'), '%Y-%m-%d').year }}"
