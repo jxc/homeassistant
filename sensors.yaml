@@ -21,6 +21,8 @@
     - 30
     - 45
 
+- platform: google_wifi
+
 - platform: template
   sensors:
     internet_state:
@@ -58,4 +60,3 @@
 #- platform: usps
 
 # - platform: lyft
-  
