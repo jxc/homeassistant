@@ -1,0 +1,32 @@
+- platform: template
+  sensors:
+    garage_left_color:
+      entity_id: sensor.holiday_name
+      value_template: >-
+        {% if is_state("sensor.holiday_name", "mardi gras") %}
+          purple
+        {% else %}
+          white
+        {% endif %}
+
+- platform: template
+  sensors:
+    garage_right_color:
+      entity_id: sensor.holiday_name
+      value_template: >-
+        {% if is_state("sensor.holiday_name", "mardi gras") %}
+          gold
+        {% else %}
+          white
+        {% endif %}
+
+- platform: template
+  sensors:
+    frond_door_color:
+      entity_id: sensor.holiday_name
+      value_template: >-
+        {% if is_state("sensor.holiday_name", "mardi gras") %}
+          green
+        {% else %}
+          white
+        {% endif %}
