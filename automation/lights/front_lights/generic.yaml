@@ -1,16 +1,19 @@
-- alias: '[Lights] Front Lights: Dimmed white at sunset'
+- alias: '[Lights] Front Lights: Dimmed color at sunset'
   trigger:
     platform: sun
     event: sunset
   action:
-    - service: hue.hue_activate_scene
+    - service: light.turn_on
       data:
-        group_name: "Front door"
-        scene_name: "Dimmed"
-    - service: hue.hue_activate_scene
+        entity_id: light.front_door
+        color_name: {{ states.sensor.frond_door_color.state }}
+    - service: light.turn_on
       data:
-        group_name: "Garage"
-        scene_name: "Dimmed"
+        entity_id:
+          - light.front_door
+          - light.garage_left
+          - light.garage_right
+        brightness_pct: 33
 
 - alias: '[Lights] Front Lights: Full white at sunset + 1hr'
   trigger:

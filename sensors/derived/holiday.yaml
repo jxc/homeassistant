@@ -6,9 +6,13 @@
         {% if is_state("sensor.simple_date_month", "12") and is_state("sensor.simple_date_day", "31") %}
           new years
         # {% elif is_state("sensor.date", "2018-02-13") %}
-        # pretend for now
         {% elif is_state("sensor.date", "2018-02-09") %}
+        # hardcoded for now
           mardi gras
+        {% elif is_state("sensor.simple_date_month", "2") and is_state("sensor.simple_date_day", "14") %}
+          valentine's day
+        {% elif is_state("sensor.date", "2018-02-16") %}
+          lunar new year
         {% else %}
           nothing
         {% endif %}
