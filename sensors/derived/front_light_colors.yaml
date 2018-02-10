@@ -1,6 +1,6 @@
 - platform: template
   sensors:
-    garage_left_color:
+    garage_left_holiday_color:
       entity_id: sensor.holiday_name
       value_template: >-
         {% if is_state("sensor.holiday_name", "new years") %}
@@ -17,7 +17,7 @@
 
 - platform: template
   sensors:
-    garage_right_color:
+    garage_right_holiday_color:
       value_template: >-
         {% if is_state("sensor.holiday_name", "new years") %}
           silver
@@ -33,7 +33,7 @@
 
 - platform: template
   sensors:
-    front_door_color:
+    front_door_holiday_color:
       value_template: >-
         {% if is_state("sensor.holiday_name", "new years") %}
           gold
