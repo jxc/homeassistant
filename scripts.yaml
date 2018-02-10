@@ -72,3 +72,11 @@ front_lights_christmas:
       data:
         group_name: "Garage"
         scene_name: "Christmas"
+
+# set_front_colors_from_sensors:
+#   sequence:
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.front_door
+#       data_template:
+#         color_name: "{{ states.sensor.front_door_color.state }}"
