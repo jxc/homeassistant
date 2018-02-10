@@ -1,4 +1,4 @@
-front_lights_off:
+- front_lights_off:
   sequence:
     - service: homeassistant.turn_off
       data:
@@ -7,7 +7,7 @@ front_lights_off:
          - light.garage_left
          - light.garage_right
 
-front_lights_holiday_colors:
+- front_lights_holiday_colors:
   sequence:
     - service: light.turn_on
       data:
