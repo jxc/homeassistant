@@ -4,9 +4,7 @@
       value_template: >-
         {% if is_state("sensor.simple_date_month", "12") and is_state("sensor.simple_date_day", "31") %}
           new years
-        # {% elif is_state("sensor.date", "2018-02-13") %}
         {% elif is_state("sensor.date", "2018-02-09") %}
-        # hardcoded for now
           mardi gras
         {% elif is_state("sensor.simple_date_month", "2") and is_state("sensor.simple_date_day", "14") %}
           valentine's day
