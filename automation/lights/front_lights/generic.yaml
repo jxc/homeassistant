@@ -6,7 +6,7 @@
     - service: light.turn_on
       data:
         entity_id: light.front_door
-        color_name: {{ states.sensor.front_door_color.state }}
+        color_name: "{{ states.sensor.front_door_color.state }}"
     - service: light.turn_on
       data:
         entity_id:
