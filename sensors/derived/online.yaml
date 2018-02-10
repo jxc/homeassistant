@@ -1,7 +1,6 @@
 - platform: template
   sensors:
     internet_state:
-      entity_id: sensor.fastcom_download
       value_template: >-
         {% if states.sensor.fastcom_download.state|float > 0 %}
           online
