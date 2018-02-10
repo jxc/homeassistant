@@ -80,7 +80,7 @@ notify:
     default_channel: '#automation'
 
 group: !include groups.yaml
-automation: !include_dir_merge_list automation/
-script: !include_dir_merge_list scripts/
+automation: !include_dir_merge_list automation
+script: !include_dir_merge_named scripts
 scene: !include_dir_list scenes
-sensor: !include_dir_merge_list sensors/
+sensor: !include_dir_merge_list sensors
