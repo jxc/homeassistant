@@ -6,7 +6,18 @@
     - service: light.turn_on
       data:
         entity_id: light.front_door
+      data_template:
         color_name: "{{ states.sensor.front_door_color.state }}"
+    - service: light.turn_on
+      data:
+        entity_id: light.garage_left
+      data_template:
+        color_name: "{{ states.sensor.garage_left_color.state }}"
+    - service: light.turn_on
+      data:
+        entity_id: light.garage_right
+      data_template:
+        color_name: "{{ states.sensor.garage_right_color.state }}"
     - service: light.turn_on
       data:
         entity_id:
