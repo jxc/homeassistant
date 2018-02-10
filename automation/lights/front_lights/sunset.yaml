@@ -1,0 +1,23 @@
+- alias: '[Lights] Front Lights: On at Sunset'
+  trigger:
+    platform: sun
+    event: sunset
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.front_door
+        brightness_pct: 100
+      data_template:
+        color_name: "{{ states.sensor.front_door_holiday_color.state }}"
+    - service: light.turn_on
+      data:
+        entity_id: light.garage_left
+        brightness_pct: 100
+      data_template:
+        color_name: "{{ states.sensor.garage_left_holiday_color.state }}"
+    - service: light.turn_on
+      data:
+        entity_id: light.garage_right
+        brightness_pct: 100
+      data_template:
+        color_name: "{{ states.sensor.garage_right_holiday_color.state }}"
