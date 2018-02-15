@@ -8,7 +8,7 @@
         {% elif is_state("sensor.holiday_name", "mardi gras") %}
           purple
         {% elif is_state("sensor.holiday_name", "valentine's day") %}
-          hotpink
+          deeppink
         {% elif is_state("sensor.holiday_name", "lunar new year") %}
           red
         {% elif is_state("sensor.holiday_name", "st. patrick's day") %}
@@ -48,7 +48,7 @@
         {% elif is_state("sensor.holiday_name", "mardi gras") %}
           green
         {% elif is_state("sensor.holiday_name", "valentine's day") %}
-          hotpink
+          deeppink
         {% elif is_state("sensor.holiday_name", "lunar new year") %}
           red
         {% elif is_state("sensor.holiday_name", "st. patrick's day") %}
