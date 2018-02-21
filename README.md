@@ -16,6 +16,7 @@
   - (1) Controller
   - (1) Garage sensor
   - (2) Switches
+  - (1) MultiSensor
 - Speedtests
   - Fast.com
   - Speedtest.net

@@ -1,31 +1,29 @@
 - alias: '[Switch] Guest Suite Heater: Turn on if too cold'
-  initial_state: false
   trigger:
     platform: time
     minutes: '/20'
     seconds: 00
   condition:
     condition: template
-    value_template: '{{ states.sensor.guest_suite_temperature.state < states.sensor.master_bedroom_temperature.state }}'
+    value_template: '{{ states.sensor.guest_suite_multi_sensor_temperature.state < states.sensor.master_bedroom_temperature.state }}'
   action:
     - service: notify.coulter_slack
       data:
-        message: Guest suite ☃️ ({{ states.sensor.guest_suite_temperature.state }}) vs master ({{ states.sensor.master_bedroom_temperature.state }}) --> Heater on
+        message: Guest suite ☃️ ({{ states.sensor.guest_suite_multi_sensor_temperature.state }}) vs master ({{ states.sensor.master_bedroom_temperature.state }}) --> Heater on
     - service: switch.turn_on
       entity_id: switch.guest_suite_switch_switch
 
 - alias: '[Switch] Guest Suite Heater: Turn off if not too cold'
-  initial_state: false
   trigger:
     platform: time
     minutes: '/20'
     seconds: 00
   condition:
     condition: template
-    value_template: '{{ states.sensor.guest_suite_temperature.state >= states.sensor.master_bedroom_temperature.state }}'
+    value_template: '{{ states.sensor.guest_suite_multi_sensor_temperature.state >= states.sensor.master_bedroom_temperature.state }}'
   action:
     - service: notify.coulter_slack
       data:
-        message: Guest suite is good ({{ states.sensor.guest_suite_temperature.state }}) vs master ({{ states.sensor.master_bedroom_temperature.state }}) --> Heater off
+        message: Guest suite is good ({{ states.sensor.guest_suite_multi_sensor_temperature.state }}) vs master ({{ states.sensor.master_bedroom_temperature.state }}) --> Heater off
     - service: switch.turn_off
       entity_id: switch.guest_suite_switch_switch
