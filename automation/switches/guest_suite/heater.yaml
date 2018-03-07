@@ -1,7 +1,7 @@
 - alias: '[Switch] Guest Suite Heater: Turn on if too cold'
   trigger:
     platform: time
-    minutes: '/20'
+    minutes: '/15'
     seconds: 00
   condition:
     condition: template
@@ -16,7 +16,7 @@
 - alias: '[Switch] Guest Suite Heater: Turn off if not too cold'
   trigger:
     platform: time
-    minutes: '/20'
+    minutes: '/15'
     seconds: 00
   condition:
     condition: template
