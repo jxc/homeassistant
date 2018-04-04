@@ -1,6 +1,6 @@
 - alias: '[Switch] Guest Suite Heater: Turn on if too cold'
-  initial_state: false
-  hide_entity: true
+  # initial_state: false
+  # hide_entity: true
   trigger:
     platform: time
     minutes: '/15'
@@ -16,8 +16,8 @@
       entity_id: switch.guest_suite_switch_switch
 
 - alias: '[Switch] Guest Suite Heater: Turn off if not too cold'
-  initial_state: false
-  hide_entity: true
+  # initial_state: false
+  # hide_entity: true
   trigger:
     platform: time
     minutes: '/15'
