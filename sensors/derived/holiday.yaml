@@ -14,7 +14,7 @@
           president's day
         {% elif is_state("sensor.simple_date_month", "3") and is_state("sensor.simple_date_day", "17") %}
           st. patrick's day
-        {% elif is_state("sensor.date", "2018-04-28") %}
+        {% elif is_state("sensor.date", "2018-05-28") %}
           memorial day
         {% elif is_state("sensor.simple_date_month", "7") and is_state("sensor.simple_date_day", "4") %}
           july 4th
