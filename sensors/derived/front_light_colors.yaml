@@ -1,7 +1,6 @@
 - platform: template
   sensors:
     garage_left_holiday_color:
-      entity_id: sensor.holiday_name
       value_template: >-
         {% if is_state("sensor.holiday_name", "new years") %}
           blue
