@@ -12,7 +12,7 @@
           red
         {% elif is_state("sensor.holiday_name", "st. patrick's day") %}
           green
-        {% elif is_state("sensor.holiday_name", "president's day") or is_state("sensor.holiday_name", "memorial day") or is_state("sensor.holiday_name", "july 4th") or is_state("sensor.holiday_name", "veteran's day") %}
+        {% elif is_state("sensor.holiday_name", "president's day") or is_state("sensor.holiday_name", "memorial day") or is_state("sensor.holiday_name", "july 4th") or is_state("sensor.holiday_name", "veteran's day")  or is_state("sensor.holiday_name", "voting day") %}
           red
         {% else %}
           white
@@ -32,7 +32,7 @@
           gold
         {% elif is_state("sensor.holiday_name", "st. patrick's day") %}
           green
-        {% elif is_state("sensor.holiday_name", "president's day") or is_state("sensor.holiday_name", "memorial day") or is_state("sensor.holiday_name", "july 4th") or is_state("sensor.holiday_name", "veteran's day") %}
+        {% elif is_state("sensor.holiday_name", "president's day") or is_state("sensor.holiday_name", "memorial day") or is_state("sensor.holiday_name", "july 4th") or is_state("sensor.holiday_name", "veteran's day")  or is_state("sensor.holiday_name", "voting day") %}
           white
         {% else %}
           white
@@ -52,7 +52,7 @@
           red
         {% elif is_state("sensor.holiday_name", "st. patrick's day") %}
           green
-        {% elif is_state("sensor.holiday_name", "president's day") or is_state("sensor.holiday_name", "memorial day") or is_state("sensor.holiday_name", "july 4th") or is_state("sensor.holiday_name", "veteran's day") %}
+        {% elif is_state("sensor.holiday_name", "president's day") or is_state("sensor.holiday_name", "memorial day") or is_state("sensor.holiday_name", "july 4th") or is_state("sensor.holiday_name", "veteran's day")  or is_state("sensor.holiday_name", "voting day") %}
           blue
         {% else %}
           white

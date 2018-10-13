@@ -18,6 +18,8 @@
           memorial day
         {% elif is_state("sensor.simple_date_month", "7") and is_state("sensor.simple_date_day", "4") %}
           july 4th
+        {% elif is_state("sensor.date", "2018-11-06") %}
+          voting day
         {% elif is_state("sensor.date", "2018-11-12") %}
           veteran's day
         {% else %}
