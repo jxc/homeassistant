@@ -18,6 +18,19 @@
           memorial day
         {% elif is_state("sensor.simple_date_month", "7") and is_state("sensor.simple_date_day", "4") %}
           july 4th
+        {% elif is_state("sensor.simple_date_month", "10") %}
+          {% if is_state("sensor.simple_date_day", "14") or 
+            is_state("sensor.simple_date_day", "15") or is_state("sensor.simple_date_day", "16") or 
+            is_state("sensor.simple_date_day", "17") or is_state("sensor.simple_date_day", "18") or 
+            is_state("sensor.simple_date_day", "19") or is_state("sensor.simple_date_day", "20") or 
+            is_state("sensor.simple_date_day", "21") or is_state("sensor.simple_date_day", "22") or 
+            is_state("sensor.simple_date_day", "23") or is_state("sensor.simple_date_day", "24") or 
+            is_state("sensor.simple_date_day", "25") or is_state("sensor.simple_date_day", "26") or 
+            is_state("sensor.simple_date_day", "27") or is_state("sensor.simple_date_day", "28") or 
+            is_state("sensor.simple_date_day", "29") or is_state("sensor.simple_date_day", "30") or 
+            is_state("sensor.simple_date_day", "31") %}
+            halloween
+          {% endif %}
         {% elif is_state("sensor.date", "2018-11-06") %}
           voting day
         {% elif is_state("sensor.date", "2018-11-12") %}
