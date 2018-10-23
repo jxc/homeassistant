@@ -13,7 +13,7 @@
         {% elif is_state("sensor.holiday_name", "st. patrick's day") %}
           green
         {% elif is_state("sensor.holiday_name", "halloween") %}
-          orange
+          darkorange
         {% elif is_state("sensor.holiday_name", "president's day") or 
           is_state("sensor.holiday_name", "memorial day") or 
           is_state("sensor.holiday_name", "july 4th") or 
@@ -39,7 +39,7 @@
         {% elif is_state("sensor.holiday_name", "st. patrick's day") %}
           green
         {% elif is_state("sensor.holiday_name", "halloween") %}
-          orange
+          darkorange
         {% elif is_state("sensor.holiday_name", "president's day") or 
           is_state("sensor.holiday_name", "memorial day") or 
           is_state("sensor.holiday_name", "july 4th") or 
