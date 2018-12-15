@@ -1,14 +1,14 @@
 - platform: template
   sensors:
     simple_date_day:
-      value_template: "{{ strptime(states('sensor.date'), '%Y-%m-%d').day }}"
+      value_template: {{ strptime(states('sensor.date'), '%Y-%m-%d').day }}
 
 - platform: template
   sensors:
     simple_date_month:
-      value_template: "{{ strptime(states('sensor.date'), '%Y-%m-%d').month }}"
+      value_template: {{ strptime(states('sensor.date'), '%Y-%m-%d').month }}
 
 - platform: template
   sensors:
     simple_date_year:
-      value_template: "{{ strptime(states('sensor.date'), '%Y-%m-%d').year }}"
+      value_template: {{ strptime(states('sensor.date'), '%Y-%m-%d').year }}
