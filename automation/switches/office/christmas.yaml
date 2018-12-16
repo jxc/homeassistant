@@ -1,6 +1,4 @@
 - alias: '[Switch] Office Xmas lights: on at sunset'
-  initial_state: false
-  hide_entity: true
   trigger:
     platform: sun
     event: sunset
@@ -9,8 +7,6 @@
     entity_id: switch.office_switch
 
 - alias: '[Switch] Office Xmas lights: off at sunrise'
-  initial_state: false
-  hide_entity: true
   trigger:
     platform: sun
     event: sunrise
